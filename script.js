@@ -25,7 +25,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let choice = prompt("Enter your move: (rock/paper/scissors)", "rock");
-    choice = choice.toLowerCase;
+    choice = choice.toLowerCase();
     console.log(choice);
     return choice
 }
@@ -76,4 +76,33 @@ function playRound(humanChoice, computerChoice) {
     }
     return 0
 }
+let myScore = 1;
+while (true) {
+    const humanSelection = getHumanChoice();
+    if (humanSelection == "exit") {
+        alert("Your final score is: " + myScore + ". Congratulation!")
+        break;
+    }
+    const computerSelection = getComputerChoice();
 
+    i = playRound(humanSelection, computerSelection);
+    alert("You choose " + humanSelection + ", the bot choose " + computerSelection + ".");
+    switch (i) {
+        case 1:
+        myScore *= 3;
+        alert("You won and gained a score! Your score: " + myScore);
+        break;
+
+        case -1:
+        myScore = 1;
+        alert("You lost and your score got reset! Your score: " + myScore);
+        break;
+
+        case 0:
+        alert("Both of you draw! Your score: " + myScore);
+        break;
+
+        default:
+        alert("error")
+    }
+}
