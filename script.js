@@ -5,6 +5,9 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * (max + 1));
   }
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let x = getRandomInt(2);
     let result = "";
@@ -22,7 +25,55 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let choice = prompt("Enter your move: (rock/paper/scissors)", "rock");
+    choice = choice.toLowerCase;
     console.log(choice);
     return choice
 }
-getHumanChoice();
+
+function playRound(humanChoice, computerChoice) {
+    let result = "";
+    if (humanChoice === "rock") {
+        if (computerChoice === "rock") {
+            result = "draw";
+        }
+        else if (computerChoice === "paper") {
+            result = "lost";
+        }
+        else if (computerChoice === "scissors") {
+            result = "won";
+        }
+    }
+    else if (humanChoice === "paper") {
+        if (computerChoice === "rock") {
+            result = "won";
+        }
+        else if (computerChoice === "paper") {
+            result = "draw";
+        }
+        else if (computerChoice === "scissors") {
+            result = "lost";
+        }
+    }
+    else if (humanChoice === "scissors") {
+        if (computerChoice === "rock") {
+            result = "lost";
+        }
+        else if (computerChoice === "paper") {
+            result = "won";
+        }
+        else if (computerChoice === "scissors") {
+            result = "draw";
+        }
+    }
+    if (result == "won") {
+        return 1
+    }
+    else if (result == "lost"){
+        return -1
+    }
+    else if (result == "draw") {
+        return 0
+    }
+    return 0
+}
+
