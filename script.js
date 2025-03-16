@@ -20,3 +20,9 @@ function getComputerChoice() {
     return result
 }
 
+function getHumanChoice() {
+    let choice = prompt("Enter your move: (rock/paper/scissors)", "rock");
+    console.log(choice);
+    return choice
+}
+getHumanChoice();
