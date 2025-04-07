@@ -125,32 +125,3 @@ scissors.addEventListener("click", () => handleClick("scissors"));
 let scoreDisplay = document.querySelector("#score");
 let resultString = document.querySelector("#result-string");
 let myScore = 1;
-/*
-if (humanSelection == "exit") {
-    alert("Your final score is: " + myScore + ". Congratulation!")
-    break;
-}
-*/
-
-
-
-/* alert("You choose " + humanSelection + ", the bot choose " + computerSelection + ".");
-
-switch (i) {
-    case 1:
-    myScore *= 3;
-    alert("You won and gained a score! Your score: " + myScore);
-    break;
-
-    case -1:
-    myScore = 1;
-    alert("You lost and your score got reset! Your score: " + myScore);
-    break;
-
-    case 0:
-    alert("Both of you draw! Your score: " + myScore);
-    break;
-    default:
-    alert("error")  
-}
-*/
