@@ -83,7 +83,29 @@ function handleClick(event) {
     const computerSelection = getComputerChoice();
     const bot = document.querySelector("#computer-selection");
     bot.innerHTML = "Computer Selection: " + computerSelection;
+
+    i = playRound(event, computerSelection)
+    switch (i) {
+        case 1:
+        myScore *= 3;
+        resultString.textContent = "You won!"
+        break;
+    
+        case -1:
+        myScore = 1;
+        resultString.textContent = "You lost!"
+        break;
+    
+        case 0:
+            resultString.textContent = "Draw!"
+        break;
+
+        default:
+        alert("error")  
+    }
+    scoreDisplay.textContent = "Score: " + myScore;
 }
+
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => handleClick("rock"));
@@ -91,8 +113,8 @@ const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => handleClick("paper"));
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => handleClick("scissors"));
-
-
+let scoreDisplay = document.querySelector("#score");
+let resultString = document.querySelector("#result-string");
 let myScore = 1;
 /*
 if (humanSelection == "exit") {
