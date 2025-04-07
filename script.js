@@ -78,16 +78,19 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function handleClick(event) {
-    let humanSelection = document.querySelector("#human-selection")
+    let humanSelection = document.querySelector("#human-selection");
     humanSelection.innerHTML = "Human Selection: " + event;
+    const computerSelection = getComputerChoice();
+    const bot = document.querySelector("#computer-selection");
+    bot.innerHTML = "Computer Selection: " + computerSelection;
 }
 
-const rock = document.querySelector("#rock")
-rock.addEventListener("click", () => handleClick("rock"))
-const paper = document.querySelector("#paper")
-paper.addEventListener("click", () => handleClick("paper"))
-const scissors = document.querySelector("#scissors")
-scissors.addEventListener("click", () => handleClick("scissors"))
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => handleClick("rock"));
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => handleClick("paper"));
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => handleClick("scissors"));
 
 
 let myScore = 1;
@@ -97,7 +100,7 @@ if (humanSelection == "exit") {
     break;
 }
 */
-const computerSelection = getComputerChoice();
+
 
 
 /* alert("You choose " + humanSelection + ", the bot choose " + computerSelection + ".");
