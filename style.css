@@ -1,0 +1,43 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1 {
+    text-align: center;
+    padding-top: 50px;
+  }
+
+#score {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+#human-selection {
+  font-size: 20px;
+  display: inline;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+#computer-selection {
+  font-size: 20px;
+  display: inline;
+  padding-left: 500px;
+}
+
+#result-string {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  padding-left: 30px;
+}
+
+#rock {
+  padding-left: 530px;
+}

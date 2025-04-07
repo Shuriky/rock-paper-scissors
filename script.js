@@ -13,12 +13,15 @@ function getComputerChoice() {
     let result = "";
     if (x == 0) {
         result = "rock";
+        computerimage.src = "images/rock.jpeg";
     }
     else if (x == 1) {
         result = "paper";
+        computerimage.src = "images/paper.jpeg";
     }
     else if (x == 2) {
         result = "scissors";
+        computerimage.src = "images/scissors.jpeg";
     }
     return result
 }
@@ -79,10 +82,16 @@ function playRound(humanChoice, computerChoice) {
 
 function handleClick(event) {
     let humanSelection = document.querySelector("#human-selection");
-    humanSelection.innerHTML = "Human Selection: " + event;
+    if (event == "scissors") {
+        humanimage.src = "images/scissors.jpeg";
+    }
+    else if (event == "paper") {
+        humanimage.src = "images/paper.jpeg";
+    }
+    else if (event == "rock") {
+        humanimage.src = "images/rock.jpeg";
+    }
     const computerSelection = getComputerChoice();
-    const bot = document.querySelector("#computer-selection");
-    bot.innerHTML = "Computer Selection: " + computerSelection;
 
     i = playRound(event, computerSelection)
     switch (i) {
